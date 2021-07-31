@@ -402,6 +402,7 @@ label{
 .login-register form{
   width: 80%;
   display: flex;
+  display: -webkit-flex;
   flex-flow: column;
   margin: 5% 10%;
   transition: .5s ease-in-out;
@@ -409,9 +410,6 @@ label{
 .form-translated form{
   transform: translateX(-125%);
   -webkit-transform: translate(-125%);
-}
-.login-form{
-  max-height: 30%;
 }
 .register-form{
   position: absolute;
