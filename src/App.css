@@ -1,38 +1,772 @@
-.App {
+*{
+  margin:0;
+  padding:0 ;
+  font-family: 'Montserrat', sans-serif;
+}
+.App{
+  display:flex;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+ul{
+  list-style: none;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+.main{
+  width: 75%;
+  overflow-y: unset;
+  margin: 5% 0 0 5%;
+}
+/* Sidebar */
+.sidebar{
+  display: flex;
+  flex-flow: column;
+  width: 20%;
+  height: 200vh;
+  text-align: start;
+  padding-top: 5% ;
+  font-size: 1.5rem;
+  border-right: 1px solid #707070;
+  align-items: center;
+}
+.sidebar .avatar{
+  width: 250px; 
+  height: 250px;
+  margin-bottom: 10%;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.sidebar ul {
+  width: 100%;
+  padding: 5% 0;
+  margin-left: 50%;
+}
+.sidebar ul li{
+  width: 100%;
+  padding: 3% 0;
+}
+.sidebar ul li:hover{
+  color:#4965F2;
+}
+.sidebar ul li:hover > .nav-link{
+  color:#4965F2;
+}
+.sidebar-logo{
+  width: 100px;
+  height: 100px;
+}
+.icon{
+  margin-right: 3%;
+}
+.btn-logout{
+  border:none;
+  background-color: transparent;
+  color:black;
+  font-size: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+/* Add Todo Form */
+.form-error-msg{
+  color:#EC564B;
+}
+.form-hidden{
+  display:none;
+}
+.btn-close-form{
+  width: 20%;
+  border-radius: 35px;
+  background-color: red;
+  font-size: 1.5rem;
+  padding: 1% 0;
+  color: white;
+  cursor: pointer;
+  border:none;
+}
+.form-lower-container{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3%;
+  
+}
+.add-todo-form{
+  width: 30%;
+  background: #F8F8F8;
+  border:1px solid #707070;
+  position: absolute;
+  padding:3% 3% 2% 3%;
+  top:25%;
+  left: 35%;
+  border-radius: 20px;
+  font-size: 1.3rem;
+}
+.add-todo-form h1{
+  text-align: center;
+  font-weight: 400;
+}
+.add-todo-form form{
+  display: flex;
+  flex-flow: column;
+}
+.add-todo-form form input, .add-todo-form form textarea{
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border:1px solid lightgray;
+  padding: 1%;
+  margin: 1% 0;
+  resize: none;
+  outline: none;
+}
+label{
+  margin-left:calc(2% + 1px);
+  color: #707070;
+}
+.form-time, .form-buttons{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-time{
+  margin-left: 1%;
+}
+.form-buttons .btn-form{
+  background: #4965F2;
+  width: 40%;
+  padding: 3%;
+  border-radius: 35px;
+  border:none;
+  cursor: pointer;
+  color: white;
+}
+.form-buttons .btn-form-close{
+  background:#EC564B;
+  text-align: center;
+  width: 40%;
+}
+/* Todo Item */
+.todos-section{
+  width: 40%;
+  display: flex;
+  flex-flow: column;
+}
+#new-task-div{
+  display:grid;
+  place-items: center;
+}
+#todos-heading{
+  text-align: center;
+  margin-bottom: 5%;
+}
+.todo{
+  display:flex;
+  align-items: center;
+  width: 100%;
+  font-size: .75rem;
+  justify-content: space-between;
+  padding: .5% 1%;
+  border:1px solid #4965F2;
+}
+.todo p{
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding:1.5% 2%;
+}
+.todo-buttons{
+  display:flex;
+  width: 25%;
+  justify-content: space-between;
+}
+.todo button{
+  width: 25px;
+  height: 25px;
+  margin:1%;
+  cursor: pointer;
+  border: 1px solid black;
+  background: transparent;
+  border-radius: 50%;
+  background-size: cover;
+}
+.completed{
+  /* background:#01D100; */
+  background: #c5c5c5;
+  border: 1px solid black;;
+}
+.completed p{
+  text-decoration: line-through;
+}
+.btn-new-task{
+  background: #4965F2;
+  color:white;
+  font-size: 1.2rem;
+  padding: 2% 7%;
+  margin-top:3%;
+  margin-right: -2%;
+  border-radius: 35px;
+  border:none;
+  max-width: 45%;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Individual Todo Panel */
+.todo-sidebar{
+  width: 40%;
+  height: 100vh;
+  margin:0;
+  transition: .5s ease-in-out;
+  background: #E8E8E8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1%
+}
+.hidden{
+  transform: translateX(100%);
+}
+.tp-description{
+  margin:5% 0 10% 0;
+  display:flex;
+  flex-flow: column;
+
+}
+.tp-description label{
+  margin:1%;
+  color: black;
+}
+.tp-description textarea{
+  font-size: 1.2rem;
+  border-radius: 25px;
+  outline: none;
+  width: 80%;
+  resize: none;
+  padding:1%;
+  color: #979797;
+}
+.tp-time{
+  display:flex;
+  font-size: 1.5rem;
+  /* width: 80%; */
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.tp-time button{
+  margin-left: 3%;
+  background:white;
+  color: black;
+  border:1px solid #707070;
+  padding: 1% 7.5%;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.tp-status, .tp-time{
+  font-size: 1.5rem;
+  padding: 2% 1%;
+}
+.tp-status p{
+  margin: 4% 0;
+}
+.tp-status p:first-child{
+  margin-top:0;
+}
+.tp-buttons{
+  width: 80%;
+  display:flex;
+  justify-content: space-between;
+  padding: 0 1%;
+}
+.tp-buttons button{
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 35px;
+  padding: 1% 5%;
+  color: white;
+  cursor: pointer;
+}
+.tp-buttons button:first-child{
+  background:#EC564B
+}
+.tp-buttons button:last-child{
+  background: #198CFF;
+}
+
+/* Burger */
+.burger{
+  display: none;
+  flex-flow: column;
+  cursor: pointer;
+  position: absolute;
+  top:3%;
+  left: 2%;
+  z-index: 1;
+}
+.burger-line{
+  width: 30px;
+  height: 3px;
+  background: #4965F2;
+  margin: 2px 0;
+}
+.translated{
+  transform: translateX(0%);
+}
+
+/* Login & Register  */
+
+.error-msg{
+  color: red;
+  text-align: center;
+}
+.auth-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border-radius: 25px;
+}
+.auth-hero{
+  height: 100%;
+  width: 70%;
+  background: url('./tp_hero_darken.png');
+  background-size: cover;
+  background-position: right;
+}
+.hero-text{
+  position: absolute;
+  top: 40%;
+  left:5%;
+  color: white;
+}
+.hero-text h1{
+  font-size: 3rem;
+}
+.hero-text p{
+  font-size: 1.4rem;
+  width: 60%;
+}
+.auth-form-container{
+  display: flex;
+  position: relative;  
+  margin-top: 3%;
+  flex-flow: column;
+  width: 40%;
+  overflow: hidden;
+}
+.auth-button-area{
+  width: 40%;
+  margin: auto;
+  margin-top: 5%;
+  background: #198CFF;
+  padding: 1% 0;
+  border-radius: 25px;
+}
+.auth-button-area button{
+  width: 50%;
+  outline: none;
+  font-size: 1.20rem;
+  height: 100%;
+  background: white;
+  transition: .5s ease-in-out;
+  color: #198CFF;
+  border: 1px solid white;
+  padding: 1% 3%;
+  margin: 0 3%;
+  border-radius: 25px;
+}
+#auth-button-translated{
+  transform: translateX(90%);
+}
+.login-register{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  overflow: hidden;
+  position: relative;
+  transition: .5s ease-in-out;
+}
+.login-register form{
+  width: 80%;
+  display: flex;
+  flex-flow: column;
+  margin: 5% 10%;
+  transition: .5s ease-in-out;
+}
+.form-translated form{
+  transform: translateX(-125%);
+}
+.register-form{
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.auth-form-container img{
+  width: 150px;
+  margin: 3% auto;
+}
+.login-form input, .register-form input{
+  width: 80%;
+  margin: 2% auto;
+  font-size: 1.25rem;
+  padding: 1%;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.76);
+  border-bottom: 1px solid black;
+}
+.login-form input[type='submit'], .register-form input[type='submit']{
+  background: #198CFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 5%;
+}
+
+/* User profile page */
+
+.profile-section{
+  display:flex;
+  width: 90%;
+}
+.user-profile-right{
+  width: 60%;
+}
+
+/* User details */
+
+.user-details{
+  border: 1px solid #979797;
+  border-radius: 25px;
+  width: 600px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+}
+.user-details .avatar{
+  width: 350px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 5% auto;
+}
+.user-details-form{
+  margin-top: 5%;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+.user-details-form label{
+  color: black;
+  font-size: 1.2rem;
+}
+.user-details-form input{
+  font-size: 1.5rem;
+  outline: none;
+  text-align: center;
+  color: #707070;
+  border: none;
+  border-bottom: 1px solid #979797;
+  padding: 1%;
+  width: 80%;
+  margin: 1% auto;
+}
+.user-details-form input:invalid{
+  border-bottom: 2px solid #EC564B;
+}
+.user-details-form input[type='submit']{
+  width: 40%;
+  border:none;
+  border-radius: 20px;
+  padding: 1%;
+  background:#198CFF;
+  color: white;
+  margin: 5% auto;
+  cursor: pointer;
+}
+
+/* Change Password */
+
+.change-pwd{
+  border: 1px solid #979797;
+  margin: 0 3%;
+  border-radius: 25px;
+  padding: 3%;
+}
+.change-pwd h1{
+  text-align: center;
+}
+.change-pwd-form{
+  margin-top: 3%;
+  display: flex;
+  flex-flow: column;
+}
+.change-pwd-form div{
+  margin: 1%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.change-pwd-form div input{
+  font-size: 1.3rem;
+  outline: none;
+  padding: 1% 3%;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #979797;
+  /* border: none; */
+  /* border-bottom: 1px solid #979797; */
+}
+.change-pwd-form div label{
+  color: black;
+}
+.change-pwd-form input[type='submit']{
+  width: 40%;
+  border:none;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  padding: 1%;
+  background:#198CFF;
+  color: white;
+  margin: 3% auto 1% auto;
+  cursor: pointer;
+}
+.change-pwd-form p{
+  color: #EC564B;
+  text-align: center;
+}
+.change-pwd-form .msg-success{
+  color: green;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Danger Zone */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.danger-zone{
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 5% 3%;
+  border: 1px solid #979797;
+  border-radius: 25px;
+  padding: 3% 0;  
+}
+.danger-zone h1{
+  margin-bottom: 3%;
+}
+.btn-delete-acc{
+  border: none;
+  border-radius: 25px;
   color: white;
+  cursor: pointer;
+  background: #EC564B;
+  padding: 1% 5%;
+  font-size: 1.3rem;
+  margin-bottom: 3%;
+}
+.danger-zone p{
+  width: 70%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.acc-info{
+  display: flex;
+  flex-flow: column;
+  margin-left: 3%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:1366px) {
+  .change-pwd-form div {
+    flex-flow: column;
+    margin:1% 0;
   }
-  to {
-    transform: rotate(360deg);
+  .change-pwd-form div input{
+    border-radius: 10px;
+  }
+  .btn-delete-acc{
+    margin-top: 3%;
+  }
+  .danger-zone p{
+    color: #707070;
+  }
+  .sidebar{
+    /* transition: .5s ease-in-out;
+    transform: translateX(-100%); */
+    width: 30%;
+  }
+  .todos-section{
+    margin:0;
+    width: 60%;
+  }
+  .btn-new-task{
+    align-self: center;
+    margin: 1% 0;
+  }
+}
+@media screen and (max-width:1280px) {
+  .todos-section{
+    margin:0;
+    width: 60%;
+  }
+  .todo-buttons{
+    width: 20%;
+  }
+}
+@media screen and (max-width:1100px) {
+  .todo-buttons{
+    width: 25%;
+  }
+  .add-todo-form{
+    width: 45%;
+    left: 27.5%;
+    top:20%
+  }
+  .profile-section{
+    flex-flow: column;
+    margin: auto;
+  }
+  .user-details{
+    width: 90%;
+    margin: auto;
+  }
+  .user-profile-right{
+    width: 90%;
+    margin:5% auto
+  }
+}
+@media screen and (max-width:960px) {
+  .user-details .avatar{
+    width: 300px;
+    height: 300px;
+  }
+  .user-details{
+    margin-top: 15%
+  }
+  .hero-text{
+    display: none;
+  }
+  .auth-container{
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+  .auth-form-container{
+    width: 100%;
+    height: 100%;
+    margin:0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .auth-container .auth-hero{
+    width: 100%;
+    margin: 0;
+    z-index: 0;;
+    position: absolute;
+  }
+  .login-form input, .register-form input{
+    border-radius: 20px;
+    font-size: 1.1rem;
+    margin: 1% auto;
+  }
+  .login-form input[type='submit'], .register-form input[type='submit']{
+    margin-top: 3%;
+  }
+  .main{
+    width: 100%;
+    margin:0;
+  }
+  .burger{
+    display:flex;
+  }
+  .sidebar{
+    transition: .5s ease-in-out;
+    /* transform: translateX(-200%); */
+    position: absolute;
+    background: white; 
+  }
+  .translated{
+    transform: translateX(-200%);
+  }
+  .sidebar .avatar{
+    margin-top:10%;
+    width: 150px;
+    height: 150px;
+  }
+  .todos-section{
+    margin:0 20%;
+    transition: .5s ease-in-out;
+    width: 60%;
+  }
+  .todos-section h1{
+    margin-top:3%;
+  }
+  .add-todo-form{
+    width: 60%;
+    left: 17.5%;
+  }
+  .add-todo-form .form-buttons{
+    margin-bottom: 0;
+  }
+  /* Individual Todo Panel */
+  .App{
+    width: 100%;
+  }
+  .todo-sidebar{
+    width: 50%;
+  }
+  .todo-sidebar h1{
+    font-size: 1.75rem;
+  }
+  .tp-status, .tp-time, .tp-buttons, .tp-description{
+    font-size: 1rem;
+  }
+  .hidden{
+    transform: translateX(200%);
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .todos-section{
+    width: 80%;
+    margin:0 10%;
+  }
+  .sidebar{
+    width: 50%;
+  }
+  .todo-sidebar{
+    width: 90%;
+    border-radius: 25px;
+    margin: 12.5% 5%;
+    align-items: center;
+    text-align: center;
+  }
+  .tp-description, .tp-time{
+    align-items: center;
+    justify-content: center;
+  }
+  .tp-buttons{
+    width: 80%;
+    margin:auto
+  }
+  .hidden{
+    transform: translateY(100%);
+    z-index: 3;
+  }
+  .add-todo-form .form-buttons{
+    width: 50%;
+  }
+  .form-buttons{
+    margin-bottom: 5%;
+  }
+  .add-todo-form .form-time{
+    width: 47.5%;
   }
 }
