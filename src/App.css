@@ -322,7 +322,7 @@ label{
 /* Login & Register  */
 
 .error-msg{
-  color: red;
+  color: #EC564B;
   text-align: center;
 }
 .auth-container{
@@ -409,7 +409,7 @@ label{
 }
 .form-translated form{
   transform: translateX(-125%);
-  -webkit-transform: translate(-125%);
+  -webkit-transform: translateX(-125%);
 }
 .register-form{
   position: absolute;
