@@ -214,6 +214,7 @@ label{
   border:none;
   cursor: pointer;
   align-self: flex-end;
+  white-space: nowrap;
 }
 
 /* Individual Todo Panel */
@@ -380,7 +381,7 @@ label{
   border-radius: 25px;
 }
 .auth-button-area{
-  width: 60%;
+  width: 40%;
 }
 .auth-button-area button{
   font-size: 1rem;
@@ -407,6 +408,10 @@ label{
 }
 .form-translated form{
   transform: translateX(-125%);
+  -webkit-transform: translate(-125%);
+}
+.login-form{
+  max-height: 30%;
 }
 .register-form{
   position: absolute;
@@ -651,6 +656,9 @@ label{
   }
 }
 @media screen and (max-width:960px) {
+  .auth-button-area{
+    width: 60%;
+  }
   .user-details .avatar{
     width: 250px;
     height: 250px;
