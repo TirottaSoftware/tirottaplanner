@@ -397,7 +397,7 @@ label{
   flex-flow: row;
   overflow: hidden;
   position: relative;
-  /* transition: .5s ease-in-out; */
+  transition: .5s ease-in-out;
 }
 .login-register form{
   width: 80%;
@@ -405,16 +405,18 @@ label{
   display: -webkit-flex;
   flex-flow: column;
   margin: 5% 10%;
-  /* transition: .5s ease-in-out; */
+  transition: .5s ease-in-out;
 }
-.form-translated form{
-  transform: translateX(-125%);
-  -webkit-transform: translate(-125%);
+.form-translated .login-form{
+  /* transform: translateX(-125%);
+  -webkit-transform: translateX(-125%); */
+  display: none;
 }
 .register-form{
   position: absolute;
   left: 100%;
   top: 0;
+  transform: translateX(-125%);
 }
 .auth-form-container img{
   width: 150px;
