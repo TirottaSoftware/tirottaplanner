@@ -210,7 +210,6 @@ label{
   margin-right: -2%;
   border-radius: 35px;
   border:none;
-  max-width: 45%;
   cursor: pointer;
   align-self: flex-end;
 }
@@ -363,7 +362,7 @@ label{
   margin-top: 5%;
   background: #198CFF;
   padding: 1% 0;
-  border-radius: 25px;
+  border-radius: 30px;
 }
 .auth-button-area button{
   width: 50%;
@@ -377,6 +376,13 @@ label{
   padding: 1% 3%;
   margin: 0 3%;
   border-radius: 25px;
+}
+.auth-button-area{
+  width: 60%;
+}
+.auth-button-area button{
+  font-size: 1rem;
+  padding: 3% 1%;
 }
 #auth-button-translated{
   transform: translateX(90%);
@@ -420,7 +426,7 @@ label{
   border-bottom: 1px solid black;
 }
 .login-form input[type='submit'], .register-form input[type='submit']{
-  background: #198CFF;
+  background-color: #198CFF;
   color: white;
   border: none;
   cursor: pointer;
@@ -622,7 +628,7 @@ label{
 }
 @media screen and (max-width:1100px) {
   .todo-buttons{
-    width: 25%;
+    width: 30%;
   }
   .add-todo-form{
     width: 45%;
@@ -644,14 +650,17 @@ label{
 }
 @media screen and (max-width:960px) {
   .user-details .avatar{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
   .user-details{
     margin-top: 15%
   }
   .hero-text{
     display: none;
+  }
+  .change-pwd-form div input{
+    width: 80%;
   }
   .auth-container{
     display: block;
@@ -672,9 +681,10 @@ label{
     position: absolute;
   }
   .login-form input, .register-form input{
-    border-radius: 20px;
+    border-radius: 15px;
     font-size: 1.1rem;
     margin: 1% auto;
+    padding: 3%;
   }
   .login-form input[type='submit'], .register-form input[type='submit']{
     margin-top: 3%;
@@ -709,8 +719,8 @@ label{
     margin-top:3%;
   }
   .add-todo-form{
-    width: 60%;
-    left: 17.5%;
+    width: 90%;
+    left: 1.5%;
   }
   .add-todo-form .form-buttons{
     margin-bottom: 0;

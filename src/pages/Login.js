@@ -26,7 +26,7 @@ const Login = (props) => {
             <p className = 'error-msg'>{props.errorMessage}</p>
             <input onChange = {handleUsernameChange} placeholder = 'username' value = {username} type = 'text' />
             <input onChange = {handlePasswordChange} placeholder = 'password' value = {password} type = 'password' />
-            <input type = 'submit' />
+            <input type = 'submit' value = 'Log In' />
         </form>
     )
 }
