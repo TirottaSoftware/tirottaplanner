@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import DeletedTasks from './pages/Trash';
 import Profile from './pages/Profile';
@@ -66,9 +66,9 @@ function App() {
       updateAuth();
     })
   }
-  
-  const toggleOverflow = () => {
-    console.log(window.location.pathname);
+
+  const closeSidebar = () => {
+    setTranslated(true);
   }
 
   return (
@@ -76,16 +76,16 @@ function App() {
       <div className = "App">
         {
           authState.loggedIn?
-            <Router>
+            <Router >
             <Burger handleBurgerClick = {handleBurgerClick} />
-            <Sidebar logout = {logout} translated = {translated} />
-            <Switch>
-                <div className = 'main'>
-                  <Route path = '/' exact component = {Home} />
-                  <Route path = '/deleted' exact component = {DeletedTasks} />
-                  <Route path = '/profile' exact component = {Profile} />
-                </div>
-            </Switch> 
+            <Sidebar logout = {logout} close = {closeSidebar} translated = {translated} />
+              <div className = 'main'>
+                <Switch>
+                      <Route path = '/' exact component = {Home} />
+                      <Route path = '/deleted' exact component = {DeletedTasks} />
+                      <Route path = '/profile' exact component = {Profile} />
+                </Switch> 
+              </div>
           </Router>
           :
           <div className = 'auth-container'>

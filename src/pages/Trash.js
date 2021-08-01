@@ -9,6 +9,8 @@ function DeletedTasks() {
     const [todoSidebar, setTodoSidebar] = useState({todo: {}, hidden: true})
 
     useEffect(() => {
+        document.body.style.overflowY = 'hidden';
+        window.scrollTo(0, 0)
         updateUI()
     },[])
 

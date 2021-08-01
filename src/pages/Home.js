@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 import Todo from '../components/Todo';
 import AddTodoForm from '../components/AddTodoForm';
 import TodoInfo from '../components/TodoInfo';
@@ -13,6 +14,8 @@ function Home() {
     const {authState} = useContext(AuthContext)
 
     useEffect(() => {
+      window.scrollTo(0, 0)
+      document.body.style.overflowY = 'hidden';
       updateUI();
     }, [])
   
@@ -77,7 +80,7 @@ function Home() {
                   })
                 }
                 <div id = 'new-task-div'>
-              <button className = 'btn-new-task' onClick = {toggleForm}>{formVisibility?'Close':'+New Todo'}</button>
+                  <button className = 'btn-new-task' onClick = {toggleForm}>{formVisibility?'Close':'+New Todo'}</button>
                 </div>
               <AddTodoForm open = {formVisibility} hideForm = {toggleForm} addTodo = {addTodo} />
               <TodoInfo updateTodo = {updateTodo} closeSidebar = {closeSidebar} todo = {todoSidebar.todo} hidden = {todoSidebar.hidden} />

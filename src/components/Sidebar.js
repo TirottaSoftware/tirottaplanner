@@ -17,10 +17,10 @@ function Sidebar(props) {
             <p>Howdy,</p>
             <p>{authState.loggedUser.username}</p>
             <ul>
-                <li><FontAwesomeIcon className = 'icon' icon={faInbox} /><Link className = 'nav-link' to = '/'>Home</Link></li>
-                <li><FontAwesomeIcon className = 'icon' icon={faTrash} /><Link className = 'nav-link' to = '/deleted'>Trash</Link></li>
-                <li><FontAwesomeIcon className = 'icon' icon={faUser} /><Link className = 'nav-link' to = '/profile'>Profile</Link></li>
-                <li><FontAwesomeIcon className = 'icon' icon={faSignOutAlt} /><Link className = 'nav-link' to = '/' onClick = {props.logout}>Logout</Link></li>
+                <li onClick = {props.close} ><FontAwesomeIcon className = 'icon' icon={faInbox} /><Link className = 'nav-link' to = '/'>Home</Link></li>
+                <li onClick = {props.close} ><FontAwesomeIcon className = 'icon' icon={faTrash} /><Link className = 'nav-link' to = '/deleted'>Trash</Link></li>
+                <li onClick = {props.close} ><FontAwesomeIcon className = 'icon' icon={faUser} /><Link className = 'nav-link' to = '/profile'>Profile</Link></li>
+                <li onClick = {props.close} ><FontAwesomeIcon className = 'icon' icon={faSignOutAlt} /><Link className = 'nav-link' to = '/' onClick = {props.logout}>Logout</Link></li>
             </ul>
             <img className = 'sidebar-logo' src = {TPlogo} />
         </div>

@@ -21,6 +21,7 @@ function Profile() {
     const [pwdSucess, setPwdSuccess] = useState(false);
 
     useEffect(() => {
+        document.body.style.overflowY = 'unset';
         const id = authState.loggedUser.uid;
         axios.get('https://tirottaplanner.herokuapp.com/auth/' + id).then(res => {
             setUser(res.data);
