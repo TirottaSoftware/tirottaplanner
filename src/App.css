@@ -397,6 +397,7 @@ label{
   position: relative;
   display: flex;
   flex-flow: row;
+  top:0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -407,6 +408,7 @@ label{
   flex-flow: column;
   align-items: flex-end;
   position: absolute;
+  top:0;
   padding: 5% 10%;
   transition: .5s ease-in-out;
 }
@@ -416,11 +418,9 @@ label{
 }
 .login-form{
   left: 0;
-  top: 0;
 }
 .register-form{
   left: 101%;
-  top: 0;
 }
 .auth-form-container img{
   width: 150px;
@@ -681,7 +681,7 @@ label{
   }
   .auth-form-container{
     width: 100%;
-    height: 60%;
+    height: 100%;
     border-bottom: 1px solid white;
     margin:0;
     z-index: 1;
