@@ -399,10 +399,6 @@ label{
   z-index: 1;
   width: 40%;
 }
-.auth-button-area button{
-  font-size: 1rem;
-  padding: 3% 1%;
-}
 #auth-button-translated{
   transform: translateX(90%);
 }
