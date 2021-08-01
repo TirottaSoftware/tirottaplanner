@@ -176,7 +176,6 @@ label{
 .todo{
   display:flex;
   align-items: center;
-  width: 100%;
   font-size: .75rem;
   justify-content: space-between;
   padding: .5% 1%;
