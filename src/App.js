@@ -16,7 +16,6 @@ function App() {
   const [translated, setTranslated] = useState(true);
   const [authState, setAuthState] = useState({loggedUser: {}, loggedIn: false})
   const [loginErrorMessage, setLoginErrorMessage] = useState('');
-  const [formTranslated, setFormTranslated] = useState(false);
 
   useEffect(() => {
       updateAuth();
@@ -73,6 +72,14 @@ function App() {
 
   const translateForm = () => {
     document.querySelector('.login-register').classList.toggle('form-translated');
+    const button = document.querySelector('.auth-button-area button');
+    button.classList.toggle('auth-button-translated');
+    if(button.classList.contains('auth-button-translated')){
+      button.innerHTML = 'Register'
+    }
+    else{
+      button.innerHTML = 'Login'
+    }
   }
 
   return (
@@ -102,7 +109,7 @@ function App() {
             <div className = 'auth-form-container'>
               <img src = {tpLogo} alt = 'tp-logo'/>
               <div className = 'auth-button-area'>
-                <button id = {formTranslated?'auth-button-translated':''} onClick = {translateForm}>{formTranslated?'Register':'Login'}</button>
+                <button onClick = {translateForm}>Login</button>
               </div>
               <div className = 'login-register'>
                 <Login errorMessage = {loginErrorMessage} login = {login} />
