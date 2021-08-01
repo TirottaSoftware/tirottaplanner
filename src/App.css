@@ -80,6 +80,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 /* Add Todo Form */
 .form-error-msg{
+  text-align: center;
   color:#EC564B;
 }
 .form-hidden{
@@ -335,7 +336,7 @@ label{
 /* Login & Register  */
 
 .error-msg{
-  color: red;
+  color: #EC564B;
   text-align: center;
 }
 .auth-container{
@@ -428,7 +429,7 @@ label{
   width: 80%;
   display: flex;
   flex-flow: column;
-  align-items: flex-end;
+  align-items: center;
   position: absolute;
   top:0;
   padding: 5% 10%;
@@ -465,6 +466,7 @@ label{
   cursor: pointer;
   border-radius: 30px;
   margin-top: 5%;
+  padding: 1.5% 0;
 }
 
 /* User profile page */
@@ -518,7 +520,7 @@ label{
   width: 80%;
   margin: 1% auto;
 }
-.user-details-form input:invalid{
+input:invalid{
   border-bottom: 2px solid #EC564B;
 }
 .user-details-form input[type='submit']{

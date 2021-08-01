@@ -34,6 +34,10 @@ const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if(!password || !email || !username){
+            setErrorMessage('Please fill out all the required fields.')
+            return;
+        }
         if(password === confirmPassword){
             setErrorMessage('')
             props.register(username, password, email);

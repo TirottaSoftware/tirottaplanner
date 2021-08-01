@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react';
+import { useHistory } from 'react-router';
 import { AuthContext } from '../AuthContext';
 import axios from 'axios';
 
@@ -19,6 +20,8 @@ function Profile() {
     const [userUpdateMessage, setUserUpdateMessage] = useState('');
 
     const [pwdSucess, setPwdSuccess] = useState(false);
+
+    const history = useHistory();
 
     useEffect(() => {
         document.body.style.overflowY = 'unset';
@@ -84,9 +87,10 @@ function Profile() {
       if (window.confirm("Are you sure you want to delete your account. This action is irrevirsible")) {
         // Delete account
         const id = user.id;
-        axios.put('https://tirottaplanner.herokuapp.com//auth/delete', {id}).then(res => {
+        axios.put('https://tirottaplanner.herokuapp.com/auth/delete', {id}).then(res => {
             console.log(res.data);
             localStorage.removeItem('accessToken');
+            history.push('/');
         })
       } else {
         // Do nothing!

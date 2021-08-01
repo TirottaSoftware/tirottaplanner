@@ -65,6 +65,9 @@ function App() {
       localStorage.setItem('accessToken', res.data.accessToken);
       updateAuth();
     })
+    .catch(err => {
+      console.log(err);
+    })
   }
 
   const closeSidebar = () => {
