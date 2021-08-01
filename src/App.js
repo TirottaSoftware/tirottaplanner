@@ -72,9 +72,8 @@ function App() {
   }
 
   const translateForm = () => {
-    // setFormTranslated(!formTranslated);
+    document.querySelector('.slider').classList.toggle('slider-translated');
     document.querySelector('.login-register').classList.toggle('form-translated');
-    document.querySelector('.auth-button-area button').classList.toggle('auth-button-translated')
   }
 
   return (
@@ -104,7 +103,9 @@ function App() {
             <div className = 'auth-form-container'>
               <img src = {tpLogo} alt = 'tp-logo'/>
               <div className = 'auth-button-area'>
+                <div className = {formTranslated?'slider slider-translated':'slider'}></div>
                 <button onClick = {translateForm}>Login</button>
+                <button onClick = {translateForm}>Register</button>
               </div>
               <div className = 'login-register' >
                 <Login errorMessage = {loginErrorMessage} login = {login} />
