@@ -72,6 +72,7 @@ function App() {
   }
 
   const translateForm = () => {
+    // setFormTranslated(!formTranslated);
     document.querySelector('.login-register').classList.toggle('form-translated');
   }
 
@@ -102,9 +103,9 @@ function App() {
             <div className = 'auth-form-container'>
               <img src = {tpLogo} alt = 'tp-logo'/>
               <div className = 'auth-button-area'>
-                <button id = {formTranslated?'auth-button-translated':''} onClick = {translateForm}>{formTranslated?'Register':'Login'}</button>
+                <button id = {formTranslated?'auth-button-translated':'btn-auth'} onClick = {translateForm}>{formTranslated?'Register':'Login'}</button>
               </div>
-              <div className = 'login-register'>
+              <div className = {formTranslated?'login-register form-translated':'login-register'}>
                 <Login errorMessage = {loginErrorMessage} login = {login} />
                 <Register register = {register} />
               </div>
