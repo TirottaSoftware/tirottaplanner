@@ -405,6 +405,7 @@ label{
 }
 #auth-button-translated{
   transform: translateX(90%);
+  -webkit-transform: translateY(90%);
 }
 .login-register{
   position: relative;
