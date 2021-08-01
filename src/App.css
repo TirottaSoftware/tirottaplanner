@@ -353,11 +353,13 @@ label{
 }
 .auth-form-container{
   display: flex;
-  position: relative;  
   margin-top: 3%;
   flex-flow: column;
   width: 40%;
   overflow: hidden;
+}
+.auth-form-container img{
+  z-index: 1;
 }
 .auth-button-area{
   width: 40%;
@@ -381,6 +383,7 @@ label{
   border-radius: 25px;
 }
 .auth-button-area{
+  z-index: 1;
   width: 40%;
 }
 .auth-button-area button{
@@ -391,32 +394,32 @@ label{
   transform: translateX(90%);
 }
 .login-register{
-  width: 100%;
-  height: 100%;
+  position: relative;
   display: flex;
   flex-flow: row;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  position: relative;
-  transition: .5s ease-in-out;
 }
 .login-register form{
   width: 80%;
   display: flex;
-  display: -webkit-flex;
   flex-flow: column;
-  margin: 5% 10%;
+  position: absolute;
+  padding: 5% 10%;
   transition: .5s ease-in-out;
 }
-.form-translated .login-form{
-  /* transform: translateX(-125%);
-  -webkit-transform: translateX(-125%); */
-  display: none;
+.form-translated form{
+  transform: translateX(-101%);
+  -webkit-transform: translateX(-101%);
+}
+.login-form{
+  left: 0;
+  top: 0;
 }
 .register-form{
-  position: absolute;
-  left: 100%;
+  left: 101%;
   top: 0;
-  transform: translateX(-125%);
 }
 .auth-form-container img{
   width: 150px;
