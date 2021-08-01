@@ -35,10 +35,13 @@ const Register = (props) => {
         e.preventDefault();
 
         if(!password || !email || !username){
-            setErrorMessage('Please fill out all the required fields.')
+            setErrorMessage('Please fill in all the required fields.')
             return;
         }
         if(password === confirmPassword){
+            if(password.length < 6){
+                setErrorMessage('Password must be at least 6 characters long')
+            }
             setErrorMessage('')
             props.register(username, password, email);
         }

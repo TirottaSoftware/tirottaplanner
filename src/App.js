@@ -15,7 +15,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [translated, setTranslated] = useState(true);
   const [authState, setAuthState] = useState({loggedUser: {}, loggedIn: false})
-  const [loginErrorMessage, setLoginErrorMessage] = useState('');
+  const [formErrorMessage, setFormErrorMessage] = useState('');
 
   useEffect(() => {
        updateAuth();
@@ -49,10 +49,9 @@ function App() {
   const login = (username, password) => {
     axios.post('https://tirottaplanner.herokuapp.com/auth/login', {username, password}).then(res => {
       if(res.data.error){
-        setLoginErrorMessage(res.data.error);
+        setFormErrorMessage(res.data.error);
       }
       else{
-        setLoginErrorMessage('');
         localStorage.setItem('accessToken', res.data);
         updateAuth();
       }
@@ -65,7 +64,7 @@ function App() {
       updateAuth();
     })
     .catch(err => {
-      console.log(err);
+      setFormErrorMessage(err);
     })
   }
 
@@ -83,7 +82,7 @@ function App() {
       <div className = "App">
         {
           authState&&authState.loggedIn?
-            <Router >
+            <Router>
             <Burger handleBurgerClick = {handleBurgerClick} />
             <Sidebar logout = {logout} close = {closeSidebar} translated = {translated} />
               <div className = 'main'>
@@ -110,7 +109,8 @@ function App() {
                 <button onClick = {translateForm}>Register</button>
               </div>
               <div className = 'login-register' >
-                <Login errorMessage = {loginErrorMessage} login = {login} />
+                  <p className = 'error-msg'>{formErrorMessage}</p>
+                <Login login = {login} />
                 <Register register = {register} />
               </div>
             </div>
