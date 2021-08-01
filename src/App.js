@@ -100,7 +100,7 @@ function App() {
               <div className = 'auth-button-area'>
                 <button id = {formTranslated?'auth-button-translated':''} onClick = {() => setFormTranslated(!formTranslated)}>{formTranslated?'Register':'Login'}</button>
               </div>
-              <div className = {formTranslated?'form-translated login-register':'login-register'}>
+              <div className = {formTranslated?'login-register form-translated':'login-register'}>
                 <Login translated = {formTranslated} errorMessage = {loginErrorMessage} login = {login} />
                 <Register translated = {!formTranslated} register = {register} />
               </div>
