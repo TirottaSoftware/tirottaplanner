@@ -71,6 +71,10 @@ function App() {
     setTranslated(true);
   }
 
+  const translateForm = () => {
+    setFormTranslated(!formTranslated);
+  }
+
   return (
     <AuthContext.Provider value = {{authState, setAuthState}}>
       <div className = "App">
@@ -98,11 +102,11 @@ function App() {
             <div className = 'auth-form-container'>
               <img src = {tpLogo} alt = 'tp-logo'/>
               <div className = 'auth-button-area'>
-                <button id = {formTranslated?'auth-button-translated':''} onClick = {() => setFormTranslated(!formTranslated)}>{formTranslated?'Register':'Login'}</button>
+                <button id = {formTranslated?'auth-button-translated':''} onClick = {translateForm}>{formTranslated?'Register':'Login'}</button>
               </div>
               <div className = {formTranslated?'login-register form-translated':'login-register'}>
-                <Login translated = {formTranslated} errorMessage = {loginErrorMessage} login = {login} />
-                <Register translated = {!formTranslated} register = {register} />
+                <Login errorMessage = {loginErrorMessage} login = {login} />
+                <Register register = {register} />
               </div>
             </div>
           </div>
