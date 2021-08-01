@@ -408,8 +408,9 @@ label{
   flex-flow: column;
   align-items: flex-end;
   position: absolute;
+  background: white;
   top:0;
-  padding: 5% 10%;
+  padding: 40% 10% 5% 10%;
   transition: .5s ease-in-out;
 }
 .form-translated form{
