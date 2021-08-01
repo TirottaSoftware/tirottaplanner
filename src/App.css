@@ -403,7 +403,7 @@ label{
   font-size: 1rem;
   padding: 3% 1%;
 }
-#auth-button-translated{
+.auth-button-translated{
   transform: translateX(90%);
   -webkit-transform: translateX(90%);
 }
