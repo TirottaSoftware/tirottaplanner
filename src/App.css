@@ -2,6 +2,7 @@
   margin:0;
   padding:0 ;
   font-family: 'Montserrat', sans-serif;
+  transition: .5s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -322,7 +323,7 @@ label{
 /* Login & Register  */
 
 .error-msg{
-  color: red;
+  color: #EC564B;
   text-align: center;
 }
 .auth-container{
@@ -357,9 +358,6 @@ label{
   flex-flow: column;
   width: 40%;
   overflow: hidden;
-}
-.auth-form-container img{
-  z-index: 1;
 }
 .auth-button-area{
   width: 40%;
@@ -413,8 +411,10 @@ label{
   transition: .5s ease-in-out;
 }
 .form-translated form{
-  transform: translateX(-101%);
-  -webkit-transform: translateX(-101%);
+  position: absolute;
+  top:0;
+  -webkit-transform: translateX(-101%) translateY(0);
+  transform: translateX(-101%) translateY(0);
 }
 .login-form{
   left: 0;
@@ -424,6 +424,7 @@ label{
 }
 .auth-form-container img{
   width: 150px;
+  z-index: 1;
   margin: 3% auto;
 }
 .login-form input, .register-form input{
