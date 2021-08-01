@@ -72,7 +72,7 @@ function App() {
   }
 
   const translateForm = () => {
-    // setFormTranslated(!formTranslated);
+    setFormTranslated(!formTranslated);
     document.querySelector('.login-register').classList.toggle('form-translated');
   }
 
