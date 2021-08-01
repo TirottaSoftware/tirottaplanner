@@ -649,6 +649,7 @@ input:invalid{
     width: 60%;
   }
   .btn-new-task{
+    width: 100%;
     align-self: center;
     margin: 1% 0;
   }
