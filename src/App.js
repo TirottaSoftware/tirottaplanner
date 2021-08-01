@@ -1,25 +1,24 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { AuthContext } from './AuthContext';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import DeletedTasks from './pages/Trash';
-import Profile from './pages/Profile';
 import Burger from './components/Burger';
+import DeletedTasks from './pages/Trash';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 import Register from './pages/Register';
-import { AuthContext } from './AuthContext';
+import Sidebar from './components/Sidebar';
 import tpLogo from './TP_logo.png';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [translated, setTranslated] = useState(true);
   const [authState, setAuthState] = useState({loggedUser: {}, loggedIn: false})
   const [loginErrorMessage, setLoginErrorMessage] = useState('');
-  const [formTranslated, setFormTranslated] = useState(false);
 
   useEffect(() => {
-      updateAuth();
+       updateAuth();
   }, [])
 
   const updateAuth = () => {
@@ -83,7 +82,7 @@ function App() {
     <AuthContext.Provider value = {{authState, setAuthState}}>
       <div className = "App">
         {
-          authState.loggedIn?
+          authState&&authState.loggedIn?
             <Router >
             <Burger handleBurgerClick = {handleBurgerClick} />
             <Sidebar logout = {logout} close = {closeSidebar} translated = {translated} />
@@ -106,7 +105,7 @@ function App() {
             <div className = 'auth-form-container'>
               <img src = {tpLogo} alt = 'tp-logo'/>
               <div className = 'auth-button-area'>
-                <div className = {formTranslated?'slider slider-translated':'slider'}></div>
+                <div className = 'slider'></div>
                 <button onClick = {translateForm}>Login</button>
                 <button onClick = {translateForm}>Register</button>
               </div>
