@@ -5,9 +5,11 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+html, body, #root, .App{
+  height: 100%;
+}
 .App{
   display:flex;
-  height: 100vh;
 }
 a{
   text-decoration: none;
