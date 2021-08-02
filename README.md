@@ -40,4 +40,16 @@ You can view or change your user details at any time by going to the User page. 
 
 ## What does the app look like?
 
-...Screenshots about to be added...
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Login_desktop.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Login_mobile.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Home_desktop.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Home_mobile.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Todo_info_desktop.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Todo_info_mobile.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/New_todo_desktop.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/New_todo_mobile.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Trash_desktop.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/Register_mobile.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/User_desktop.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/User_mobile_1.PNG)
+![alt text](https://github.com/TirottaSoftware/tirottaplanner/blob/main/screenshots/User_mobile_2.PNG)
