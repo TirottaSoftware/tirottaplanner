@@ -18,12 +18,12 @@ function App() {
   const [formErrorMessage, setFormErrorMessage] = useState('');
 
   useEffect(() => {
-       updateAuth();
+    updateAuth();
   }, [])
 
   const updateAuth = () => {
     if(localStorage.getItem('accessToken')){
-      axios.get('https://tirottaplanner.herokuapp.com/auth', {
+     axios.get('https://tirottaplanner.herokuapp.com/auth', {
         headers: {'accessToken': localStorage.getItem('accessToken')}
       })
       .then(res => {
@@ -81,8 +81,8 @@ function App() {
     <AuthContext.Provider value = {{authState, setAuthState}}>
       <div className = "App">
         {
-          authState&&authState.loggedIn?
-            <Router>
+          authState.loggedIn?
+          <Router>
             <Burger handleBurgerClick = {handleBurgerClick} />
             <Sidebar logout = {logout} close = {closeSidebar} translated = {translated} />
               <div className = 'main'>
@@ -109,7 +109,7 @@ function App() {
                 <button onClick = {translateForm}>Register</button>
               </div>
               <div className = 'login-register' >
-                  <p className = 'error-msg'>{formErrorMessage}</p>
+                <p className = 'error-msg'>{formErrorMessage}</p>
                 <Login login = {login} />
                 <Register register = {register} />
               </div>
