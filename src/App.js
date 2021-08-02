@@ -10,14 +10,14 @@ import Profile from './pages/Profile';
 import Register from './pages/Register';
 import Sidebar from './components/Sidebar';
 import tpLogo from './TP_logo.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 function App() {
   const [translated, setTranslated] = useState(true);
   const [authState, setAuthState] = useState({loggedUser: {}, loggedIn: false})
   const [formErrorMessage, setFormErrorMessage] = useState('');
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     updateAuth();
   }, [])
 
