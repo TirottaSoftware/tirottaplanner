@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Tirotta Planner App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A remastered version of the previous Todo App: [Tirotta's Todo App](https://github.com/TirottaSoftware/tirottas-todo-app "Tirotta's Todo App").
+Tirotta planner is a Full Stack Todo Application made for people who struggle with organizing their daily tasks. The app helps such people develop a visual representation of their tasks for the day by creating & managing todo's.
 
-## Available Scripts
+## How to use the app
 
-In the project directory, you can run:
+1. Visit  [Tirotta Planner](https://suspicious-roentgen-b8ea00.netlify.app/)
+2. Sign up or Login into your account
+3. Start adding and organizing your todo's
 
-### `npm start`
+## App Menus & Features
+### Creating Todo's
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can create a todo by simply clicking on the "+New Todo" button on your Home page, then input the name, description and time for the task. Once you hit "Add", you will see your task appear on your Home page among all your other todo's.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Completing & Deleting Todo's
 
-### `npm test`
+You can complete a todo by clicking on the little checkmark icon next to its name. Upon completing a todo, you will see it changing visually, indicating that the completion was successful.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Furthermore, you have the chance to delete your todo's, regardless if they are completed or not. To do that, click on the bin icon next to the task name. Once you delete it, you will not be able to see it on your Home page anymore. However, you can always visit your deleted tasks by going to the Trash page. From there, you can decide whether to restore your tasks (Bring them back to your Home page) or delete them permanently.
 
-### `npm run build`
+### Todo details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To see all the task details, such as time, description, date of creation and so on, simply click on the info icon next to the task name. This will show a small window will all the data about the task.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### User profile
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can view or change your user details at any time by going to the User page. Once you are there, you have the chance to change your username, email, profile picture, password or delete your account. You can also see additional information regarding your account at the very bottom of the page.
 
-### `npm run eject`
+## Technologies used
+* ReactJS
+* HTML5
+* CSS3
+* NodeJS
+* Express
+* MySql
+* Server & Database hosted on Heroku
+* Client side hosted on Netlify
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## What does the app look like?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+...Screenshots about to be added...
